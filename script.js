@@ -38,23 +38,29 @@ function renderFoodList() {
     foodUlEle.appendChild(liElement);
 
     // Edit Button Function
-    let editBtn = document.querySelector(".edit");
+    let editBtn = liElement.querySelector(".edit");
     editBtn.addEventListener("click", function () {
-      // let newFoodName = prompt("Enter the new food name: ", foodItem.foodName);
-      // let newFoodPrice = prompt(
-      //   "Enter the new food price: ",
-      //   foodItem.foodPrice
-      // );
-      // let newFoodRatings = prompt(
-      //   "Enter the new food ratings: ",
-      //   foodItem.foodRatings
-      // );
-      // updateTask(tasks, t.id, newTaskName, newUrgency, isDone);
-      // renderTasks(); // redraw all the tasks, along with any changes
-    });
+      let newFoodName = prompt("Enter the new food name: ", foodItem.foodName);
+      let newFoodPrice = prompt(
+        "Enter the new food price: ",
+        foodItem.foodPrice
+      );
+      let newFoodRatings = prompt(
+        "Enter the new food ratings: ",
+        foodItem.foodRatings
+      );
+      updateFoodItem(
+        foods,
+        foodItem.id,
+        newFoodName,
+        newFoodPrice,
+        newFoodRatings
+      );
+      renderFoodList(); // redraw all the tasks, along with any changes
+    }); // end of Edit Button
 
     // Delete Button Function
     let deleteBtn = document.querySelector(".edit");
-    deleteBtn.addEventListener("click", function () {});
-  }
+    deleteBtn.addEventListener("click", function () {}); // end of Delete Button
+  } // end of for-loop
 } // end RenderFoodList()

@@ -7,6 +7,7 @@ async function loadData() {
   return response.data.record; //returns the array that contains food objects
 }
 
+// CREATE: food item
 async function createFoodItem(foods, foodName, foodPrice, foodRatings) {
   let foodItem = {
     id: foods.length,
@@ -14,7 +15,35 @@ async function createFoodItem(foods, foodName, foodPrice, foodRatings) {
     foodPrice: foodPrice,
     foodRatings: foodRatings,
   };
+
   foods.push(foodItem);
   console.log("foods", foods);
   await axios.put(`${BASE_URL}/b/${BIN_ID}`, foods);
-}
+} // end of CREATE: createFoodItem()
+
+// UPDATE: foodItem
+async function updateFoodItem(
+  foods,
+  foodId,
+  newFoodName,
+  newFoodPrice,
+  newFoodRatings
+) {
+  // using findIndex
+  let index = foods.findIndex(function (food) {
+    return food.id == foodId; // if the annoymous function returns true, then the index of task is the result
+  });
+
+  // Do the replacement
+  // make sure index is no null, undefined or 0 etc.
+  if (index || index === 0) {
+    foods[index] = {
+      id: foodId,
+      foodName: newFoodName,
+      foodPrice: newFoodPrice,
+      foodRatings: newFoodRatings,
+    };
+  }
+
+  await axios.put(`${BASE_URL}/b/${BIN_ID}`, foods);
+} // end of UPDATE: updateFoodItem()
