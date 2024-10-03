@@ -2,19 +2,19 @@
     {
         "id": 1,
         "foodName": "Chicken Rice",
-        "price": 3.5,
-        "ratings": 4
+        "foodPrice": 3.5,
+        "foodRatings": 4
     },
     {
         "id": 2,
         "foodName": "Chilli Crab",
-        "price": 90,
-        "ratings": 5
+        "foodPrice": 90,
+        "foodRatings": 5
     },
     {
         "id": 3,
         "foodName": "Hokkein Mee",
-        "price": 5,
-        "ratings": 4
+        "foodPrice": 5,
+        "foodRatings": 4
     }
 ]
