@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     });
 }); // end DOMContentLoaded
 
+// READ: Render Food List + Edit and Delete button functionality
 function renderFoodList() {
   let foodUlEle = document.querySelector("#foods");
 
@@ -35,7 +36,6 @@ function renderFoodList() {
       <br />
       <br />
     `;
-    foodUlEle.appendChild(liElement);
 
     // Edit Button Function
     let editBtn = liElement.querySelector(".edit");
@@ -60,7 +60,15 @@ function renderFoodList() {
     }); // end of Edit Button
 
     // Delete Button Function
-    let deleteBtn = document.querySelector(".edit");
-    deleteBtn.addEventListener("click", function () {}); // end of Delete Button
+    let deleteBtn = liElement.querySelector(".delete");
+    deleteBtn.addEventListener("click", function () {
+      let reallyDelete = confirm("Are you sure you want to delete?");
+      if (reallyDelete) {
+        deleteFoodItem(foods, foodItem.id);
+        renderFoodList();
+      }
+    }); // end of Delete Button
+
+    foodUlEle.appendChild(liElement);
   } // end of for-loop
-} // end RenderFoodList()
+} // end renderFoodList()
