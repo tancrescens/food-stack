@@ -1,12 +1,20 @@
 [
     {
         "id": 1,
-        "taskname": "walk",
-        "taskUrgency": 5
+        "foodName": "Chicken Rice",
+        "price": 3.5,
+        "ratings": 4
     },
     {
-        "id": 1,
-        "taskname": "walk",
-        "taskUrgency": 5
+        "id": 2,
+        "foodName": "Chilli Crab",
+        "price": 90,
+        "ratings": 5
+    },
+    {
+        "id": 3,
+        "foodName": "Hokkein Mee",
+        "price": 5,
+        "ratings": 4
     }
 ]
